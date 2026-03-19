@@ -586,7 +586,7 @@ function love.load()
     s:set("Game vs Human", "Game vs Human")
     s:set("About game", "About game")
     s:set("Exit game", "Exit game")
-    s:set("Help text", [[MANKALA (Kalakh, Bantumi)
+    s:set("Help text", [[MANCALA (Kalah, Bantumi)
 The game has 12 fields (6 grains each) in two rows and two barns on the sides. Players take turns taking grains from their field and distribute them one by one counterclockwise to each of the following fields and their barn, skipping the opponent's barn. If the last grain is placed in the barn, the player goes again. If the last grain is placed in their empty field and the opponent's opposite field is not empty, the player transfers all these grains to the barn. The first move from the first field is prohibited. When one of the players has all the fields empty or more than half of all the grains in the barn, the remaining grains are transferred to the barn. The player with the most grains wins!]])
     s:set("About text", [[ABOUT GAME
 
