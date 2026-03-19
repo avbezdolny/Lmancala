@@ -1,0 +1,2 @@
+# Lmancala
+MANKALA (Kalakh, Bantumi)
