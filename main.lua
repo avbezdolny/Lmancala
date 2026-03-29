@@ -110,17 +110,17 @@ end
 
 
 local function get_rand_seed_pos(row, col)
-    local hy = 1.55
+    local hy = 1.75
     local ox = 0
     local oy = cell_size * 2
     if row == 2 then ox = cell_size end
     if (row == 1 and col == 1) or (row == 2 and col == 7) then
-        hy = 2.55
+        hy = 2.75
         oy = cell_size
     end
 
-    local rx = board.x + ox + cell_size * (col - 1) + love.math.random( math.ceil(cell_size * 0.45), math.floor(cell_size * 0.55) )
-    local ry = board.y + oy * (row - 1) + love.math.random( math.ceil(cell_size * 0.45), math.floor(cell_size * hy) )
+    local rx = board.x + ox + cell_size * (col - 1) + love.math.random( math.ceil(cell_size * 0.25), math.floor(cell_size * 0.75) )
+    local ry = board.y + oy * (row - 1) + love.math.random( math.ceil(cell_size * 0.25), math.floor(cell_size * hy) )
     local rr = love.math.random() * math.pi * 2
 
     return { x = rx, y = ry, rad = rr }
@@ -805,7 +805,7 @@ function love.draw()
 
                 love.graphics.setColor(1, 1, 1, 1)
                 for _k,v in pairs(matrix[row][col]) do
-                    love.graphics.draw(image_seed, v.x, v.y, v.rad, k_scale * 0.4, k_scale * 0.4, cell_size * 0.2, cell_size * 0.2)
+                    love.graphics.draw(image_seed, v.x, v.y, v.rad, k_scale * 0.4, k_scale * 0.4, image_seed:getWidth() * 0.5, image_seed:getHeight() * 0.5)
                 end
 
                 if row == target_cell[1] and col == target_cell[2] then love.graphics.draw(image_target, board.x + ox + cell_size * (col - 1), board.y + oy * (row - 1) + cell_size * 0.5, 0, k_scale, k_scale) end
