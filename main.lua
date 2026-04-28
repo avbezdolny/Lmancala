@@ -731,6 +731,10 @@ function love.update(dt)
     if is_anim then
         -- hand
         offset_anim = {x = offset_anim.x + dt * vector_anim.x * cell_size * 0.15, y = offset_anim.y + dt * vector_anim.y * cell_size * 0.15}
+        
+        if math.abs(offset_anim.x) >= cell_size * 0.1 then offset_anim.x = 0 end  -- для исправления скачков анимации при паузах
+        if math.abs(offset_anim.y) >= cell_size * 0.1 then offset_anim.y = 0 end  -- для исправления скачков анимации при паузах
+        
         if offset_anim.x >= cell_size * 0.05 then
             vector_anim.x = -1
         elseif offset_anim.x < 0 then
@@ -749,7 +753,7 @@ function love.update(dt)
                 local particles_alpha = {0.3, 0.6}
                 particles[p].size = love.math.random( math.floor(cell_size/20), math.ceil(cell_size/10) )
                 particles[p].x = love.math.random( 0, love.graphics.getWidth() - particles[p].size )
-                particles[p].y = love.math.random( 0, -particles[p].size )
+                particles[p].y = -particles[p].size
                 local c = love.math.random( 1, 6 )
                 local a = love.math.random( 1, 2 )
                 local pc = particles_colors[c]

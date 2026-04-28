@@ -10,7 +10,7 @@
 local lume = { _version = "2.3.0" }
 
 local pairs, ipairs = pairs, ipairs
-local type, assert, unpack = type, assert, table.unpack
+local type, assert, unpack = type, assert, table.unpack or unpack
 local tostring, tonumber = tostring, tonumber
 local math_floor = math.floor
 local math_ceil = math.ceil
